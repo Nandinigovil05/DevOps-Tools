@@ -1,0 +1,37 @@
+version: '2'
+services:
+  app:
+    image: flask-image
+    container_name: flask-container
+    ports:
+      - 5050:5000
+    volumes:
+     - app_volume:/var/lib/docker/volumes
+    netwoks:
+     - app_network
+     links:
+      - db
+  db:
+    image: mysql
+    container_name: db-container
+    ports:
+     - 5051:3306
+    volumes:
+     - db_volume:/var/lib/mysql
+    networks:
+     - app_network
+    environment:
+     - MYSQL_ROOT_PASSWORD=MyRootPwd
+     - MYSQL_DATABASE=test
+     - MYSQL_USER=admin
+     - MYSQL_PASSWORD=MyPwd
+networks:
+  app_network:
+    external: true
+volumes:
+  app_volume:
+    external: true
+  db_volume:
+    external: true
+
+ 
