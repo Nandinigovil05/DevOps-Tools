@@ -1,0 +1,9 @@
+---
+- name: Copy Commands
+  hosts: localhost
+  become: true
+  tasks:
+   - name: copying
+     copy:
+       src: index.html
+       dest: /var/www/html/index.html
