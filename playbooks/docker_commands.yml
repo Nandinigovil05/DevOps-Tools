@@ -1,0 +1,9 @@
+---
+- name: Docker Commands
+  hosts: localhost
+  become: true
+  tasks:
+   - name: create docker network
+     command: docker network create -d bridge app_network
+   - name: create docker volume
+     command: docker volume create app_volume
