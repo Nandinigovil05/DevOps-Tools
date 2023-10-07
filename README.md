@@ -3,7 +3,6 @@ This repo contains script related to devops tools usecase.
 ### Docker
 #### 1. Writing dockerfiles to dockerize apps
 #### 2. Writing docker-compose files to spin services
-#### 3. 
 
 ### K8s
 #### 1. Writing yaml scripts for pods, deployment, services etc
